@@ -126,6 +126,25 @@
       color: #6060a0;
       font-size: 0.9rem;
     }
+
+    /* Responsive - móvil */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+      }
+
+      .musicos {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Responsive - tablet */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .musicos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
