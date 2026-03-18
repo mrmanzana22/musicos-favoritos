@@ -100,6 +100,21 @@
     .musico-card .album strong {
       color: #e94560;
     }
+
+    /* Efectos hover */
+    .musico-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .musico-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(233, 69, 96, 0.3);
+      border-color: #e94560;
+    }
+
+    .musico-card:hover img {
+      filter: brightness(1.1);
+    }
   </style>
 </head>
 <body>
