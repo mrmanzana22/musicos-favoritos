@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Músicos Favoritos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Reset CSS */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      text-align: center;
+      padding: 3rem 1rem;
+      border-bottom: 3px solid #e94560;
+    }
+
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #a0a0c0;
+      font-style: italic;
+    }
+
+    /* Layout principal */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .musicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    /* Tarjetas de músicos */
+    .musico-card {
+      background-color: #1a1a2e;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #2a2a4a;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 1.2rem 0.5rem;
+    }
+
+    .numero {
+      background-color: #e94560;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .musico-card h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      color: #e94560;
+      text-align: left;
+    }
+
+    /* Imágenes */
+    .musico-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Contenido textual de la tarjeta */
+    .musico-card .biografia {
+      padding: 1rem 1.2rem;
+      font-size: 0.95rem;
+      color: #b0b0c8;
+      flex-grow: 1;
+    }
+
+    .musico-card .album {
+      padding: 0.8rem 1.2rem 1.2rem;
+      font-size: 0.9rem;
+      color: #7ec8e3;
+      border-top: 1px solid #2a2a4a;
+      margin-top: auto;
+    }
+
+    .musico-card .album strong {
+      color: #e94560;
+    }
+
+    /* Efectos hover */
+    .musico-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .musico-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(233, 69, 96, 0.3);
+      border-color: #e94560;
+    }
+
+    .musico-card:hover img {
+      filter: brightness(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a2e;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 3rem;
+      border-top: 3px solid #e94560;
+      color: #6060a0;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive - móvil */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+      }
+
+      .musicos {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Responsive - tablet */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .musicos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mis Músicos Favoritos</h1>
+    <p>Una selección personal de artistas que han marcado mi vida musical</p>
+  </header>
+
+  <main>
+    <section class="musicos">
+      <article class="musico-card">
+        <div class="card-header">
+          <span class="numero">#1</span>
+          <h2>The Weeknd</h2>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/The_Weeknd_with_hand_on_front_2018_%28cropped%29.jpg/440px-The_Weeknd_with_hand_on_front_2018_%28cropped%29.jpg" alt="The Weeknd">
+        <p class="biografia">Cantante canadiense de R&amp;B y pop. Conocido por su voz única y sus éxitos globales. Su estilo mezcla R&amp;B oscuro con synth-pop.</p>
+        <p class="album"><strong>Álbum más representativo:</strong> After Hours</p>
+      </article>
+
+      <article class="musico-card">
+        <div class="card-header">
+          <span class="numero">#2</span>
+          <h2>Arctic Monkeys</h2>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Arctic_Monkeys_-_Orange_Stage_-_Roskilde_Festival_2014.jpg/440px-Arctic_Monkeys_-_Orange_Stage_-_Roskilde_Festival_2014.jpg" alt="Arctic Monkeys">
+        <p class="biografia">Banda británica de rock indie formada en Sheffield. Liderada por Alex Turner, conocidos por sus letras ingeniosas y evolución musical constante.</p>
+        <p class="album"><strong>Álbum más representativo:</strong> AM</p>
+      </article>
+
+      <article class="musico-card">
+        <div class="card-header">
+          <span class="numero">#3</span>
+          <h2>Gustavo Cerati</h2>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Gustavo_Cerati_2.jpg/440px-Gustavo_Cerati_2.jpg" alt="Gustavo Cerati">
+        <p class="biografia">Músico y compositor argentino, líder de Soda Stereo. Considerado uno de los más grandes artistas del rock en español.</p>
+        <p class="album"><strong>Álbum más representativo:</strong> Bocanada</p>
+      </article>
+
+      <article class="musico-card">
+        <div class="card-header">
+          <span class="numero">#4</span>
+          <h2>Radiohead</h2>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Radiohead_%288of9%29.jpg/440px-Radiohead_%288of9%29.jpg" alt="Radiohead">
+        <p class="biografia">Banda británica de rock alternativo y experimental formada en Oxford. Pioneros en reinventarse constantemente, desde rock alternativo hasta electrónica experimental.</p>
+        <p class="album"><strong>Álbum más representativo:</strong> OK Computer</p>
+      </article>
+
+      <article class="musico-card">
+        <div class="card-header">
+          <span class="numero">#5</span>
+          <h2>Kendrick Lamar</h2>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Kendrick_Lamar_2016.jpg/440px-Kendrick_Lamar_2016.jpg" alt="Kendrick Lamar">
+        <p class="biografia">Rapero y compositor estadounidense de Compton, California. Considerado uno de los mejores MCs de la historia, ganador de múltiples Grammy y un Pulitzer.</p>
+        <p class="album"><strong>Álbum más representativo:</strong> To Pimp a Butterfly</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Mis Músicos Favoritos &mdash; Ejercicio 4 &mdash; Universidad de la Costa</p>
+  </footer>
+</body>
+</html>
